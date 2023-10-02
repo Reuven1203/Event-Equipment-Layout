@@ -1,0 +1,34 @@
+<svg width="213" height="344" viewBox="0 0 213 344" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="98" y="64" width="16" height="194" fill="#D9D9D9"/>
+<rect width="16" height="107" transform="matrix(-0.771871 0.635779 0.635779 0.771871 114.35 251)" fill="#D9D9D9"/>
+<rect x="98.0283" y="251" width="16" height="107" transform="rotate(39.4778 98.0283 251)" fill="#D9D9D9"/>
+<rect y="13" width="213" height="12" rx="5" fill="#D9D9D9"/>
+<ellipse cx="25" cy="38" rx="25" ry="13" fill="#D9D9D9"/>
+<ellipse cx="25" cy="38.5" rx="21" ry="10.5" fill="url(#paint0_diamond_2_196)"/>
+<ellipse cx="188" cy="38" rx="25" ry="13" fill="#D9D9D9"/>
+<ellipse cx="188" cy="38.5" rx="21" ry="10.5" fill="url(#paint1_diamond_2_196)"/>
+<circle cx="79.5" cy="47.5" r="22.5" fill="#D9D9D9"/>
+<circle cx="79" cy="48" r="15" fill="url(#paint2_diamond_2_196)"/>
+<circle cx="132.5" cy="47.5" r="22.5" fill="#D9D9D9"/>
+<circle cx="132" cy="48" r="15" fill="url(#paint3_diamond_2_196)"/>
+<ellipse cx="106.5" cy="7.5" rx="22.5" ry="7.5" fill="#D9D9D9"/>
+<rect x="101" y="25" width="9" height="40" fill="#D9D9D9"/>
+<defs>
+<radialGradient id="paint0_diamond_2_196" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(25 38.5) rotate(90) scale(12.5 25)">
+<stop stop-color="#FF0000"/>
+<stop offset="1" stop-color="#FF0000" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="paint1_diamond_2_196" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(188 38.5) rotate(90) scale(12.5 25)">
+<stop stop-color="#4200FF"/>
+<stop offset="1" stop-color="#0500FF" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="paint2_diamond_2_196" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(79 48) rotate(90) scale(20.5)">
+<stop stop-color="#28FF05"/>
+<stop offset="1" stop-color="#28FF05" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="paint3_diamond_2_196" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(132 48) rotate(90) scale(20.5)">
+<stop stop-color="#FF05D7"/>
+<stop offset="1" stop-color="#FF05E6" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>
