@@ -1,11 +1,33 @@
 import {FC, ReactNode} from 'react';
 
 interface Props {
-    children : ReactNode
+    children : ReactNode;
+    isSelected:boolean;
+    onClick:()=>void;
+    isCustomize?:boolean;
 }
-const Card:FC<Props> = ({children}) => {
+const Card:FC<Props> = ({children, isSelected,onClick, isCustomize}) => {
+
+    const toggleAnimation = () => {
+        if (isSelected) {
+            if (!isCustomize) {
+                return 'sm:animate-expand';
+            } else {
+                return 'sm:animate-showForm overflow-hidden';
+            }
+        } else {
+            if (!isCustomize) {
+                return 'sm:animate-shrink hover:opacity-[0.8]';
+            } else {
+                return 'sm:animate-hideForm overflow-hidden';
+            }
+        }
+    }
+
     return (
-        <div className={'bg-[#2E49A6] text-white p-5 shadow-2xl border-2 border-[#2E49A6] hover:border-[#0FBB6F] cursor-pointer w-[300px]'}>
+        <div onClick={onClick}  className={`${toggleAnimation()} 
+         rounded-2xl  bg-blue-light text-white  shadow-2xl 
+        sm:cursor-pointer h-[300px] max-sm:w-[80%] w-[300px] relative shadow-custom-1 shadow-custom-2  `}>
             {children}
         </div>
     );

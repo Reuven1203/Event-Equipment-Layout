@@ -47,12 +47,15 @@ function App() {
 
   return (
       <div className={'background'}>
-          <div className={'h-full'}>
-              <div className={'w-full h-[20%] flex text-center justify-center items-center text-white text-4xl'}>
-                  BASSMENT EVENTS
+         <div className={'h-full backdrop-blur-2xl overflow-scroll'}>
+              <div className={'w-full h-[10%] flex text-center justify-center items-center text-white text-2xl'}>
+                  DJ REUVEN EVENTS
               </div>
-              <div className="w-full h-[30%] flex justify-center items-center">
-                  {equipmentRender()}
+
+              <div className="h-[30%] flex justify-center">
+                  <div className="w-4/5  h-full flex justify-center items-center max-sm:p-3 max-sm:space-x-3">
+                      {equipmentRender()}
+                  </div>
               </div>
               <div className={'h-1/2 w-full'}>
                   <PackageList onPackageSelect={onPackageSelect}/>
