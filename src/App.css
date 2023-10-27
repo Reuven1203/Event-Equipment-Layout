@@ -1,14 +1,32 @@
 .background {
-  background-image: url('./bg.webp');
-  /*background-color: #426996;*/
-  backdrop-filter: blur(50px);
+  /*background-image: url('./bg.webp');*/
+  /*background-image: url('../public/assets/bg2.png');*/
+  /*backdrop-filter: blur(50px);*/
   /*background: linear-gradient(179deg, #1BFF4D -21.96%, #005C9F 96.81%);*/
   height: 100vh;
   width:100vw;
   overflow: hidden;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  /*background-size: cover;*/
+  /*background-repeat: no-repeat;*/
+  background: linear-gradient(165deg, #000000 50%, #d581dc 50%) center;
   overflow: hidden;
 
+
+
 }
+
+.bottom-half{
+  height:50%;
+  width:100%;
+  padding: 5px;
+  /*background: linear-gradient(to left top, #f8f8f8, #17191F 50%, #000000 50%, #000000)*/
+}
+
+
+
+
+
+
+
+
+

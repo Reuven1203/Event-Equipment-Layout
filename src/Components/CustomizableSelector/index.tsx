@@ -33,18 +33,22 @@ type Action = ToggleCheckAction | SetQuantityAction;
 
 const initialState = {
     0: {
+        name: 'Speaker',
         checked: true,
         quantity: 1,
     },
     1: {
+        name: 'Bass',
         checked: false,
         quantity: 0,
     },
     2: {
+        name: 'Moving Head',
         checked: false,
         quantity: 0,
     },
     3: {
+        name: 'Gigbar',
         checked: false,
         quantity: 0,
     }
@@ -75,12 +79,12 @@ const reducer = (state: State, action: Action) => {
     }
 };
 
-const CustomizableSelector:FC<{isSelected:boolean, onClick: (index:number)=>void}> = (props) => {
+const CustomizableSelector:FC<{isSelected:boolean, onClick: (index:number)=>void, submitForm: (values: any)=> void}> = (props) => {
     const screenW = window.innerWidth;
     const [state, dispatch] = useReducer(reducer, initialState);
 
     useEffect(() => {
-        console.log("Current form state:", state);
+        props.submitForm(state);
     }, [state]);
 
     const equipmentList = [{

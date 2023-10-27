@@ -23,21 +23,32 @@ module.exports = {
         },
       keyframes: {
         expand: {
-           '0%' : {height: '300px'},
-              '100%' : {height: '350px'},
+           '0%' : {height: '265px'},
+              '100%' : {height: '300px'},
         },
         shrink: {
-              '0%' : {height: '350px'},
-                '100%' : {height: '300px'},
+              '0%' : {height: '300px'},
+                '100%' : {height: '265px'},
         },
-        showForm: {
-            '0%' : {height: '10px'},
-            '100%' : {height: '350px'},
-        },
-        hideForm: {
-            '0%' : {height: '350px'},
-            '100%' : {height: '55px'},
-        }
+        // showForm: {
+        //     '0%' : {
+        //         height: '10px',
+        //     },
+        //     '100%' : {
+        //         height: '350px',
+        //         // width: '100%',
+        //     },
+        // },
+        // hideForm: {
+        //     '0%' : {
+        //         height: '350px',
+        //         // width: '100%',
+        //     },
+        //     '100%' : {
+        //         height: '55px',
+        //         // width: '350px',
+        //     },
+        // }
       }
     },
     animation: {

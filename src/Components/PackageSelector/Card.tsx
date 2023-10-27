@@ -26,8 +26,10 @@ const Card:FC<Props> = ({children, isSelected,onClick, isCustomize}) => {
 
     return (
         <div onClick={onClick}  className={`${toggleAnimation()} 
-         rounded-2xl  bg-blue-light text-white  shadow-2xl 
-        sm:cursor-pointer h-[300px] max-sm:w-[80%] w-[300px] relative shadow-custom-1 shadow-custom-2  `}>
+         rounded-2xl  bg-[#181819] border-white border-2 text-white  shadow-2xl 
+        sm:cursor-pointer h-[265px] max-sm:w-[80%] w-[250px] relative 
+       
+        `}>
             {children}
         </div>
     );
