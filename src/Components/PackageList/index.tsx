@@ -1,9 +1,10 @@
-import React, { FC, useState, useCallback } from 'react';
+import React, { FC, useState } from 'react';
 import PackageSelector from '../PackageSelector';
 import { equipmentList } from '../../lib/equipment';
 import SwipeableViews from 'react-swipeable-views';
 import CustomizableSelector from '../CustomizableSelector';
 import { Swipe } from '@mui/icons-material';
+import { usePackage } from '../../Contexts/PackageContext';
 
 const { speaker, bass, booth, movingHead } = equipmentList;
 
@@ -82,15 +83,13 @@ const packs = [
 ]
 
 const PackageList: FC<{ onPackageSelect: any }> = (props) => {
-    const [selectedPackage, setSelectedPackage] = useState(1);
-
-    const onPackageSelect = (packageType: number) => {
-        props.onPackageSelect(packageType);
-        setSelectedPackage(packageType);
-    }
-
+   const {onPackageSelect, selectedPackage} = usePackage();
     const handleSwipeChange = (index: number) => {
         onPackageSelect(index);
+    }
+
+    const handleFormSubmit = (values: any) => {
+        console.log(values);
     }
 
     return (
@@ -102,20 +101,20 @@ const PackageList: FC<{ onPackageSelect: any }> = (props) => {
                             <PackageSelector onClick={onPackageSelect} index={pack.index} title={pack.title} items={pack.items} basePrice={pack.basePrice} isSelected={selectedPackage === pack.index} />
                         </div>
                     ))}
-                    <div key={100} className={'w-full flex justify-center'}>
-                   <CustomizableSelector isSelected={selectedPackage === 100} onClick={onPackageSelect}/>
-                    </div>
+                   {/* <div key={100} className={'w-full flex justify-center'}>*/}
+                   {/*<CustomizableSelector submitForm={handleFormSubmit} isSelected={selectedPackage === 100} onClick={onPackageSelect}/>*/}
+                   {/* </div>*/}
                 </SwipeableViews>
                 <div className={'w-full flex justify-center mt-3'}>
                     <Swipe sx={{color:'white'}}/>
                 </div>
             </div>
-            <div className={`max-sm:hidden flex space-x-10 overflow-x-scroll h-full items-center justify-center`}>
+            <div className={`w-full max-sm:hidden flex space-x-1 h-full items-center justify-center`}>
                 {packs.map((pack) => (
                     <PackageSelector key={pack.index} index={pack.index} onClick={onPackageSelect} title={pack.title} items={pack.items} basePrice={pack.basePrice} isSelected={selectedPackage === pack.index} />
                 ))}
-                <h1 className={'text-4xl text-white'}>OR</h1>
-                <CustomizableSelector isSelected={selectedPackage === 100} onClick={onPackageSelect} />
+                {/*<h1 className={'text-4xl text-white'}>OR</h1>*/}
+                {/*<CustomizableSelector submitForm={handleFormSubmit} isSelected={selectedPackage === 100} onClick={onPackageSelect} />*/}
             </div>
         </>
     );

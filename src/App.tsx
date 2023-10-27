@@ -2,15 +2,14 @@ import {useState} from 'react';
 import './App.css';
 import EquipmentComponent from './Components/Equipment/EquipmentComponent';
 import PackageList from './Components/PackageList';
+import {usePackage} from './Contexts/PackageContext';
+//import favicon
+import logo from './DJLOGO.png'
 
 
 
 function App() {
-    const [selectedPackage, setSelectedPackage] = useState(1);
-    const onPackageSelect = (packageType: number) => {
-        setSelectedPackage(packageType);
-    }
-
+    const {onPackageSelect, selectedPackage} = usePackage();
     const equipmentRender = () => {
         if(selectedPackage === 0) {
             return (
@@ -47,18 +46,19 @@ function App() {
 
   return (
       <div className={'background'}>
-         <div className={'h-full backdrop-blur-2xl overflow-scroll'}>
-              <div className={'w-full h-[10%] flex text-center justify-center items-center text-white text-2xl'}>
-                  DJ REUVEN EVENTS
-              </div>
-
-              <div className="h-[30%] flex justify-center">
-                  <div className="w-4/5  h-full flex justify-center items-center max-sm:p-3 max-sm:space-x-3">
+         <div className={'h-screen overflow-scroll w-full flex flex-col items-center'}>
+             <div className={'w-full'}>
+                 <a href={'http://www.djreuven.com'}><img width={110} height={100} src={logo}/></a>
+                 <div className={'w-full p-5 text-center  text-white text-4xl font-medium'}>
+                     BASSMENT EVENTS
+                 </div>
+             </div>
+              <div className="h-[30%] sm:rounded-2xl w-fit p-5 items-center p-5  shadow-md shadow-white flex sm:space-x-auto justify-center bg-[#F4FDFF]">
                       {equipmentRender()}
-                  </div>
               </div>
-              <div className={'h-1/2 w-full'}>
-                  <PackageList onPackageSelect={onPackageSelect}/>
+              <div className={'bottom-half'}>
+                  <h1 className={' text-white w-full text-center font-bold text-3xl p-3'}>Select a package</h1>
+                      <PackageList onPackageSelect={onPackageSelect}/>
               </div>
           </div>
       </div>

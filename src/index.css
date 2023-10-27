@@ -1,13 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap');
 
-
+html{
+    font-family: 'Raleway';
+    font-weight: lighter;
+}
 
 h2{
-    font-size: 30px;
+    font-size: 24px;
+}
+
+/*change h2 size on smaller screens*/
+
+@media screen and (max-width: 760px) {
+    h2{
+        font-size: 20px;
+        font-style: normal;
+    }
 }
 
 h3{
-    font-size: 20px;
+    font-size: 16px;
 }

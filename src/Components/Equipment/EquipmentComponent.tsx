@@ -5,6 +5,10 @@ import {ReactComponent as SpeakerWithBass} from './SVG Files/Speaker + bass.svg'
 import {ReactComponent as MovingHead} from './SVG Files/Moving head.svg';
 import {ReactComponent as Gigbar} from './SVG Files/Gigbar with stand.svg';
 import {ReactComponent as BoothWithLights} from './SVG Files/BoothWithLights.svg';
+import Speakerpng from './PNG files/speaker.png';
+import Boothpng from './PNG files/Booth.png';
+import SpeakerWithBasspng from './PNG files/Speaker + bass.png';
+import MovingHeadpng from './PNG files/MovingHead.png';
 import { FC } from 'react';
 
 type allowedStrings =  "Booth" | 'SpeakerWithBass' | "MovingHead" | "Gigbar" | 'Speaker' | 'BoothWithLights';
@@ -18,36 +22,35 @@ interface EquipmentType {
 const Equipment: EquipmentType[] = [
     {
         component: "Speaker",
-        svgHeightToWidthRatio: 3,
-        width: 120,
-        height: 360
+        svgHeightToWidthRatio: 1,
+        width: 146,
 
     },
     {
         component: "Booth",
         svgHeightToWidthRatio: 0.81,
-        width:340,
-        height: 276
+        width:300,
+        height:20
 
     },
     {
         component: "SpeakerWithBass",
         svgHeightToWidthRatio: 3.28,
-        width: 140,
-        height: 460
+        width: 100,
+        height:80
     },
     {
         component: "MovingHead",
         svgHeightToWidthRatio: 6.5,
-        width: 80,
-        height:450
+        width: 50,
+        // height:4
 
     },
     {
         component:'BoothWithLights',
         svgHeightToWidthRatio: 0.81,
-        width:340,
-        height: 276
+        width:300,
+        height:20
     }]
 
 
@@ -67,18 +70,29 @@ const EquipmentComponent:FC<{component: allowedStrings, width?: number, height?:
             const height = props.height ? props.height : props.width? props.width * ratio : equipmentEntry.height
             switch (component) {
                 case "Booth":
-                    return <Booth width={width} height={height} style={{height: '90%'}}/>;
+                    // return <Booth width={width} height={height} style={{height: '90%'}}/>;
+                    return <div className={'flex flex-col justify-end'}>
+                        <img src={Boothpng} width={230}   alt='Booth' />
+                    </div>;
                 case "SpeakerWithBass":
-                    return <SpeakerWithBass width={width} height={height} style={{height: '90%'}} />;
+                    // return <SpeakerWithBass width={width} height={height} style={{height: '90%'}} />;
+                    return <div className={'w-[95px]'}>
+                        <img src={SpeakerWithBasspng} alt={'Speaker with bass'} />
+                    </div>
                 case "MovingHead":
-                    return <MovingHead width={width} height={height} style={{height: '90%'}} />;
+                    // return <MovingHead width={width} height={height} style={{height: '90%'}} />;
+                    return <img src={MovingHeadpng} alt='Speaker' style={{width:'55px'}}/>;
                 case "Gigbar":
                     return <Gigbar width={width} height={height} style={{height: '90%'}} />;
                 case "Speaker":
-                    return <Speaker width={width} height={height} style={{height: '90%'}} />;
+                    return <div className={'w-[65px]'}>
+                        <img src={Speakerpng} alt='Speaker'/>
+                    </div>
                 case "BoothWithLights":
-                    return <BoothWithLights width={width} height={height} style={{height: '90%'}} />;
-
+                    // return <BoothWithLights width={width} height={height} style={{height: '90%'}} />;
+                    return <div className={'flex flex-col justify-end'}>
+                        <img src={Boothpng} width={230}   alt='Booth' />
+                    </div>;
 
 
 
@@ -92,7 +106,9 @@ const EquipmentComponent:FC<{component: allowedStrings, width?: number, height?:
     // }
 
     return (
-      mapStringToComponent(props.component) as JSX.Element
+        <div className={'min-w-[50px]  flex justify-center'}>
+            {mapStringToComponent(props.component) as JSX.Element}
+        </div>
     )
 
 
