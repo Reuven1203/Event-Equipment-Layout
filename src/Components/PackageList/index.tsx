@@ -109,7 +109,7 @@ const PackageList: FC<{ onPackageSelect: any }> = (props) => {
                     <Swipe sx={{color:'white'}}/>
                 </div>
             </div>
-            <div className={`w-full max-sm:hidden flex space-x-1 h-full items-center justify-center`}>
+            <div className={`w-full max-sm:hidden flex space-x-5 h-full items-center justify-center`}>
                 {packs.map((pack) => (
                     <PackageSelector key={pack.index} index={pack.index} onClick={onPackageSelect} title={pack.title} items={pack.items} basePrice={pack.basePrice} isSelected={selectedPackage === pack.index} />
                 ))}

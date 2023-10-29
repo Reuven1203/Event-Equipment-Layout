@@ -71,21 +71,23 @@ const EquipmentComponent:FC<{component: allowedStrings, width?: number, height?:
             switch (component) {
                 case "Booth":
                     // return <Booth width={width} height={height} style={{height: '90%'}}/>;
-                    return <div className={'flex flex-col justify-end'}>
+                    return <div className={'flex flex-col justify-end max-sm:w-[75px]'}>
                         <img src={Boothpng} width={230}   alt='Booth' />
                     </div>;
                 case "SpeakerWithBass":
                     // return <SpeakerWithBass width={width} height={height} style={{height: '90%'}} />;
-                    return <div className={'w-[95px]'}>
+                    return <div className={'w-[95px] max-sm:w-[35px]'}>
                         <img src={SpeakerWithBasspng} alt={'Speaker with bass'} />
                     </div>
                 case "MovingHead":
                     // return <MovingHead width={width} height={height} style={{height: '90%'}} />;
-                    return <img src={MovingHeadpng} alt='Speaker' style={{width:'55px'}}/>;
+                    return <div className={'w-[50px] max-sm:w-[20px]'}>
+                        <img src={MovingHeadpng} alt='Speaker'/>;
+                    </div>
                 case "Gigbar":
                     return <Gigbar width={width} height={height} style={{height: '90%'}} />;
                 case "Speaker":
-                    return <div className={'w-[65px]'}>
+                    return <div className={'w-[65px] max-sm:w-[35px]'}>
                         <img src={Speakerpng} alt='Speaker'/>
                     </div>
                 case "BoothWithLights":

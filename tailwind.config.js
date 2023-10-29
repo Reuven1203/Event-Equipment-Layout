@@ -23,12 +23,12 @@ module.exports = {
         },
       keyframes: {
         expand: {
-           '0%' : {height: '265px'},
-              '100%' : {height: '300px'},
+           '0%' : {height: '245px'},
+              '100%' : {height: '275px'},
         },
         shrink: {
-              '0%' : {height: '300px'},
-                '100%' : {height: '265px'},
+              '0%' : {height: '275px'},
+                '100%' : {height: '240px'},
         },
         // showForm: {
         //     '0%' : {
