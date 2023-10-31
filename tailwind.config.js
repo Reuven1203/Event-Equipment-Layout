@@ -4,17 +4,6 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-      colors: {
-        blue: {
-            light: '#3B82F6',
-        },
-          white: {
-                DEFAULT: '#FFFFFF',
-          },
-          black: {
-                DEFAULT: '#000000',
-          }
-      },
     extend: {
         boxShadow: {
             'custom-1': '0px 0px 9.15px 0px #2E4AA6',

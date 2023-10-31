@@ -4,15 +4,36 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {PackageProvider} from './Contexts/PackageContext';
+import {ThemeProvider,createTheme} from '@mui/material';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+const theme = createTheme({
+    typography: {
+        fontFamily: 'Raleway',
+    },
+    palette: {
+        primary: {
+            main: '#060606',
+
+        },
+        secondary: {
+            main: '#000000',
+        },
+        text: {
+            primary: '#000000',
+            secondary: '#000000',
+        },
+    },
+})
 root.render(
   <React.StrictMode>
-      <PackageProvider>
-          <App />
-      </PackageProvider>
+      <ThemeProvider theme={theme}>
+          <PackageProvider>
+              <App />
+          </PackageProvider>
+      </ThemeProvider>
   </React.StrictMode>
 );
 
