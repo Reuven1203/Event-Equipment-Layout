@@ -36,7 +36,7 @@ const ExtraEquipmentCard:FC<{name: string, img: any, max: number}> = (props) => 
     }
     return (
         <>
-            <Card  className={'relative w-fit min-w-[200px] h-[200px] flex flex-col justify-center items-center'}>
+            <Card sx={{backgroundColor:'#F6F8FA'}}  className={' relative w-fit min-w-[170px] h-[200px] flex flex-col justify-center items-center'}>
                 <div className={'w-full flex absolute top-0'}>
                     <Checkbox onClick={handleClick} checked={selected}/>
                     <div className={'flex align-middle items-center'}>
