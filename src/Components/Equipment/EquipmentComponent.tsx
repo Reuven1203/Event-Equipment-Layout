@@ -82,7 +82,7 @@ const EquipmentComponent:FC<{component: allowedStrings, width?: number, height?:
                 case "MovingHead":
                     // return <MovingHead width={width} height={height} style={{height: '90%'}} />;
                     return <div className={'w-[50px] max-sm:w-[20px]'}>
-                        <img src={MovingHeadpng} alt='Speaker'/>;
+                        <img src={MovingHeadpng} alt='Speaker'/>
                     </div>
                 case "Gigbar":
                     return <Gigbar width={width} height={height} style={{height: '90%'}} />;

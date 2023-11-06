@@ -1,4 +1,4 @@
-import {FC, useEffect, useState} from 'react';
+import {FC, useState} from 'react';
 import {Card, Checkbox} from '@mui/material';
 
 const ExtraEquipmentCard:FC<{name: string, img: any, max: number}> = (props) => {
@@ -13,7 +13,6 @@ const ExtraEquipmentCard:FC<{name: string, img: any, max: number}> = (props) => 
 
     }
     const handleBlur = () => {
-        console.log('blurred')
         if(quantity === 0)
             setSelected(false)
         else if(quantity == null) {
@@ -36,15 +35,15 @@ const ExtraEquipmentCard:FC<{name: string, img: any, max: number}> = (props) => 
     }
     return (
         <>
-            <Card sx={{backgroundColor:'#F6F8FA'}}  className={' relative w-fit min-w-[170px] h-[200px] flex flex-col justify-center items-center'}>
+            <Card sx={{backgroundColor:`${selected ? '#d8d7d7': '#F6F8FAFF'}`}}  className={' relative w-fit min-w-[170px] h-[200px] flex flex-col justify-center items-center'}>
                 <div className={'w-full flex absolute top-0'}>
                     <Checkbox onClick={handleClick} checked={selected}/>
-                    <div className={'flex align-middle items-center'}>
+                    {selected && <div className={'flex align-middle items-center'}>
                         <h3 className={'flex justify-end items-center pr-2 font-light'}>Quantity</h3>
                         <input min={0} max={props.max} onChange={handleQuantityChange} value={quantity} className={'w-[50px] h-fit outline-black border-black border-[1.5px] rounded-xl pl-2'} type='number'/>
-                    </div>
+                    </div>}
                 </div>
-                <img className={''} onBeforeInput={handleBlur} onClick={handleClick} width={100} height={100}  src={props.img}/>
+                <img onBeforeInput={handleBlur} onClick={handleClick} width={100} height={100}  src={props.img}/>
                 <h1 className={'font-bold absolute bottom-0'}>{props.name}</h1>
             </Card>
 
