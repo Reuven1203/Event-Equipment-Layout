@@ -14,7 +14,6 @@ import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs';
 import {DateTimePicker} from '@mui/x-date-pickers/DateTimePicker';
 import {useFormik} from 'formik';
 import {Person, Event, SpeakerGroup} from '@mui/icons-material';
-import ExtraEquipmentCard from './ExtraEquipmentGrid/ExtraEquipmentCard';
 import {useState} from 'react';
 import {usePackage} from '../../Contexts/PackageContext';
 import ExtraEquipmentGrid from './ExtraEquipmentGrid';
@@ -23,7 +22,7 @@ import ExtraEquipmentGrid from './ExtraEquipmentGrid';
 const QuoteForm = () => {
 
     const [activeStep,setActiveStep] = useState(0);
-    const {selectedPackage, onPackageSelect} = usePackage();
+    const {selectedPackage, onPackageSelect, openModalHandler} = usePackage();
     const formik = useFormik({
         initialValues: {
             name: '',
@@ -132,6 +131,8 @@ const QuoteForm = () => {
     const handleBack = () => {
         if(activeStep > 0){
             setActiveStep((prevActiveStep) => prevActiveStep - 1);
+        }else if(activeStep == 0) {
+            openModalHandler(false);
         }
     }
     return (
