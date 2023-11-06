@@ -14,8 +14,10 @@ import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs';
 import {DateTimePicker} from '@mui/x-date-pickers/DateTimePicker';
 import {useFormik} from 'formik';
 import {Person, Event, SpeakerGroup} from '@mui/icons-material';
+import ExtraEquipmentCard from './ExtraEquipmentGrid/ExtraEquipmentCard';
 import {useState} from 'react';
 import {usePackage} from '../../Contexts/PackageContext';
+import ExtraEquipmentGrid from './ExtraEquipmentGrid';
 
 
 const QuoteForm = () => {
@@ -138,8 +140,8 @@ const QuoteForm = () => {
                 <h2 className={'text-center'}>Fill out the following information</h2>
             <Stepper activeStep={activeStep} alternativeLabel sx={{marginTop:3}}>
                 {formSteps.map((step) => (
-                    <Step key={step.index} active={activeStep === step.index}>
-                        <StepLabel sx={{ color:'grey','.Mui-completed':{ color:'green'}, '.Mui-active':{color:'black', size:'large'}, '.Mui-error':{color:'red'}}} StepIconComponent={step.icon} error={activeStep > step.index && step.error != undefined}></StepLabel>
+                    <Step  key={step.index} active={activeStep === step.index} onClick={()=> setActiveStep(step.index)}>
+                        <StepLabel sx={{'&:hover':{cursor :'pointer'}, color:'grey','.Mui-completed':{ color:'green'}, '.Mui-active':{color:'black', size:'large'}, '.Mui-error':{color:'red'}}} StepIconComponent={step.icon} error={activeStep > step.index && step.error != undefined}></StepLabel>
                     </Step>
                 ))}
             </Stepper>
@@ -206,8 +208,9 @@ const QuoteForm = () => {
                                 <MenuItem value={1}>Standard</MenuItem>
                                 <MenuItem value={2}>Deluxe</MenuItem>
                             </Select>
-                        </FormControl>
-
+                            </FormControl>
+                        <h1>Extra Equipment</h1>
+                        <ExtraEquipmentGrid/>
                         <TextField sx={{width:'100%'}}  label={'Additional information'} variant='standard'/>
                     </div>
                 }

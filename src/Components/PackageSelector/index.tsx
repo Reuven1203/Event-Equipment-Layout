@@ -9,13 +9,17 @@ interface item {
 }
 
 const PackageSelector:FC<{index:number,title:string, items?:item[], basePrice:number, onClick:(arg:number)=> void,isSelected:boolean}> = (props) => {
-    const {onPackageSelect,openModalHandler} = usePackage();
+    const {onPackageSelect,openModalHandler, selectedPackage} = usePackage();
     const equipmentPrice = props.items?.reduce((acc, item) => {
         return acc + item.price * item.quantity;
     }
     , 0);
     const onClickHandler = () => {
-        onPackageSelect(props.index);
+        if(props.index == selectedPackage) {
+            openModalHandler(true);
+        }else {
+            onPackageSelect(props.index);
+        }
     }
     const onGetQuoteClick = () => {
         openModalHandler(true);
@@ -34,8 +38,9 @@ const PackageSelector:FC<{index:number,title:string, items?:item[], basePrice:nu
                     )
                 })}
             </ul>
-            <div className={'absolute bottom-0  w-full p-3'}>
-                <button onClick={onGetQuoteClick} className='bg-white text-black rounded-2x w-full'>Get a quote</button>
+            <div className={`absolute bottom-0 w-full p-3 text-center`}>
+                {props.index == selectedPackage ? <button onClick={onGetQuoteClick} className={`bg-white text-black text-xl rounded-xl w-full`}>Get a quote</button> :
+                    <p className={'outline rounded-2xl text-xl'}>Select to preview</p>}
             </div>
         </Card>
 

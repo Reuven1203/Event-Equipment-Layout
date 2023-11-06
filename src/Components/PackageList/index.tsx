@@ -109,13 +109,16 @@ const PackageList: FC<{ onPackageSelect: any }> = (props) => {
                     <Swipe sx={{color:'white'}}/>
                 </div>
             </div>
-            <div className={`w-full max-sm:hidden flex space-x-5 h-full items-center justify-center`}>
-                {packs.map((pack) => (
-                    <PackageSelector key={pack.index} index={pack.index} onClick={onPackageSelect} title={pack.title} items={pack.items} basePrice={pack.basePrice} isSelected={selectedPackage === pack.index} />
-                ))}
-                {/*<h1 className={'text-4xl text-white'}>OR</h1>*/}
-                {/*<CustomizableSelector submitForm={handleFormSubmit} isSelected={selectedPackage === 100} onClick={onPackageSelect} />*/}
+            <div className={'flex mt-8 justify-center items-center'}>
+                <div className={`w-full max-sm:hidden flex space-x-5 items-start  justify-center`}>
+                    {packs.map((pack) => (
+                        <PackageSelector key={pack.index} index={pack.index} onClick={onPackageSelect} title={pack.title} items={pack.items} basePrice={pack.basePrice} isSelected={selectedPackage === pack.index} />
+                    ))}
+                    {/*<h1 className={'text-4xl text-white'}>OR</h1>*/}
+                    {/*<CustomizableSelector submitForm={handleFormSubmit} isSelected={selectedPackage === 100} onClick={onPackageSelect} />*/}
+                </div>
             </div>
+
         </>
     );
 };
