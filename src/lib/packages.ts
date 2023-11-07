@@ -1,8 +1,7 @@
 import {PackageModel} from './Models/packageModel';
-import {equipment} from './Models/equipmentModel';
 import {equipmentList} from './equipment';
 
-const {speaker, microphone, booth, movingHead, bass, floorLights} = equipmentList;
+const {speaker,  booth, movingHead, bass} = equipmentList;
 
 
 const basic: PackageModel = {
@@ -17,10 +16,6 @@ const basic: PackageModel = {
             equipment: booth,
             quantity: 1
         },
-        {
-            equipment: floorLights,
-            quantity: 2
-        }
         ]
 
 }

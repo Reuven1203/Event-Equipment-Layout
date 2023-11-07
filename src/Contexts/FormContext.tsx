@@ -1,6 +1,7 @@
 import {useFormik} from 'formik';
-import {createContext, useContext} from 'react';
+import {createContext, useContext, useEffect} from 'react';
 import {usePackage} from './PackageContext';
+import {extraEquipment} from '../lib/extraEquipment';
 
 interface FormContextData {
     formik: any;
@@ -23,16 +24,44 @@ interface FormProviderProps {
 
 export const FormProvider = ({children}: FormProviderProps) => {
     const {selectedPackage} = usePackage();
+    const extraEquipment = [{
+        id: 0,
+        name: 'Microphone',
+        checked: false,
+        quantity: 0,
+    },
+        {
+            id: 1,
+            name: 'Dice Floor LED',
+            checked: false,
+            quantity: 0,
+        },
+        {
+            id: 2,
+            name: 'Fod Machine',
+            checked: false,
+            quantity: 0,
+        },
+        {
+            id: 3,
+            name: 'Gigbar',
+            checked: false,
+            quantity: 0,
+        }
+    ]
+
     const formik = useFormik({
         initialValues: {
             name: '',
             email: '',
-            phone: '',
+            phone: null,
             date: '',
             type: '',
             location: '',
             guestRange: [250,500],
             package: selectedPackage,
+            extraEquipment: extraEquipment,
+            additionalInfo: '',
 
 
         },
@@ -83,8 +112,15 @@ export const FormProvider = ({children}: FormProviderProps) => {
         }
     })
 
+
+
+    const value = {
+        formik,
+
+    }
+
     return (
-        <FormContext.Provider value={{formik}}>
+        <FormContext.Provider value={value}>
             {children}
         </FormContext.Provider>
     );

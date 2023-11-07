@@ -1,23 +1,16 @@
 import {
     Button,
-    FormControl,
-    InputLabel,
-    MenuItem,
-    Select,
-    Slider,
     Step,
     StepLabel, Stepper,
     TextField,
 } from '@mui/material';
-import {LocalizationProvider} from '@mui/x-date-pickers/LocalizationProvider';
-import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs';
-import {DateTimePicker} from '@mui/x-date-pickers/DateTimePicker';
-import {useFormik} from 'formik';
 import {Person, Event, SpeakerGroup} from '@mui/icons-material';
 import {useState} from 'react';
 import {usePackage} from '../../Contexts/PackageContext';
 import {useForm} from '../../Contexts/FormContext';
-import ExtraEquipmentGrid from './ExtraEquipmentGrid';
+import PersonalInfoForm from './PersonalInfoForm';
+import EventInfoForm from './EventInfoForm';
+import EquipmentInfoForm from './EquipmentInfoForm';
 
 
 const QuoteForm = () => {
@@ -44,32 +37,6 @@ const QuoteForm = () => {
             error: ''
         }
     ]
-    const firstStepFields = [
-        {
-            name: 'name',
-            label: 'Name',
-            type: 'text',
-            required: true,
-            value: formik.values.name,
-            error: formik.errors.name
-        },
-        {
-            name: 'email',
-            label: 'Email',
-            type: 'email',
-            required: true,
-            value: formik.values.email,
-            error: formik.errors.email
-        },
-        {
-            name: 'phone',
-            label: 'Phone',
-            type: 'text',
-            required: true,
-            value: formik.values.phone,
-            error: formik.errors.phone
-        }
-    ]
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
     }
@@ -94,77 +61,21 @@ const QuoteForm = () => {
             </Stepper>
             <div className={'space-y-3 w-full px-4'}>
                 {activeStep === 0 &&
-                    <div className={'w-full flex flex-col space-y-[20px] mt-6'}>
-                        {firstStepFields.map((field) => {
-                            return (
-                                <>
-                                    <TextField key={field.name} sx={{width:'100%'}} name={field.name} error={field.error != undefined}  label={field.label} variant='standard' onChange={formik.handleChange} value={field.value}/>
-                                    {field.error && <p className={'text-red-500'}>{field.error}</p>}
-                                </>
-                            )
-                        })}
-                    </div>
+                   <PersonalInfoForm/>
                 }
                 {activeStep ==1 &&
-                    <div className={'flex flex-col space-y-[30px] mt-7'}>
-                            <LocalizationProvider dateAdapter={AdapterDayjs}>
-                                <DateTimePicker sx={{width:'100%'}} label="Date/Time of event" />
-                            </LocalizationProvider>
-                            <FormControl fullWidth>
-                                <InputLabel>Type of event</InputLabel>
-                                <Select
-                                    label="Type of event"
-                                >
-                                    <MenuItem value={1}>Wedding</MenuItem>
-                                    <MenuItem value={2}>Birthday</MenuItem>
-                                    <MenuItem value={3}>Engagement/Henna party</MenuItem>
-                                    <MenuItem value={3}>Bar/Bat Mitzvah</MenuItem>
-                                    <MenuItem value={4}>Corporate event</MenuItem>
-                                    <MenuItem value={5}>House party</MenuItem>
-                                    <MenuItem value={6}>Other</MenuItem>
-                                </Select>
-                            </FormControl>
-                        <TextField sx={{width:'100%'}}  label={'Location of event'} variant='standard'/>
-                        <div className={'flex max-sm:flex-col sm:space-x-5'}>
-                            <h4 className={'whitespace-nowrap text-center flex items-center'}>Number of guests &nbsp;<span>{formik.values.guestRange[0]} - {formik.values.guestRange[1]}</span></h4>
-                            <Slider
-                                sx={{width:'w-full'}}
-                                min={50}
-                                step={5}
-                                max={1000}
-                                disableSwap
-                                aria-valuetext={'guests'}
-                                valueLabelDisplay={'auto'}
-                                valueLabelFormat={(value) => `${value} guests`}
-                                value={formik.values.guestRange}
-                                onChange={(event, value) => formik.setFieldValue('guestRange', value)}
-                            />
-                        </div>
-                    </div>
+                   <EventInfoForm/>
                 }
                 {activeStep == 2 &&
-                    <div className={'flex flex-col space-y-[30px] mt-7'}>
-                        <FormControl fullWidth>
-                            <InputLabel>Package</InputLabel>
-                            <Select
-                                label="Package"
-                                value={formik.values.package}
-                                onChange={(event) => onPackageSelect(Number(event.target.value))}
-                            >
-                                <MenuItem value={0}>Basic</MenuItem>
-                                <MenuItem value={1}>Standard</MenuItem>
-                                <MenuItem value={2}>Deluxe</MenuItem>
-                            </Select>
-                            </FormControl>
-                        <h1>Extra Equipment</h1>
-                        <ExtraEquipmentGrid formik={formik}/>
-                        <TextField sx={{width:'100%'}}  label={'Additional information'} variant='standard'/>
-                    </div>
+                   <EquipmentInfoForm/>
                 }
                 </div>
             <div className={'flex w-full space-x-3 absolute bottom-0 left-0 p-3'}>
                 <Button variant={'outlined'} className={'w-full'} onClick={handleBack}>Back</Button>
-                <Button variant={'contained'} className={'w-full'} onClick={handleNext}>Next</Button>
+                <div className={'w-full'}>
+                    {activeStep == 2 && Object.keys(formik.errors).length !=0 && <p className={'text-red-500 absolute bottom-12'}>Complete steps before proceeding</p>}
+                    <Button disabled={activeStep == 2 && Object.keys(formik.errors).length !=0} variant={'contained'} className={'w-full'} onClick={handleNext}>Next</Button>
+                </div>
             </div>
         </div>
     );
