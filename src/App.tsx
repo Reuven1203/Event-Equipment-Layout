@@ -4,6 +4,7 @@ import EquipmentComponent from './Components/Equipment/EquipmentComponent';
 import QuoteModal from './Components/QuoteModal';
 import PackageList from './Components/PackageList';
 import {usePackage} from './Contexts/PackageContext';
+import {FormProvider} from './Contexts/FormContext';
 //import favicon
 import logo from './DJLOGO.png'
 
@@ -47,7 +48,9 @@ function App() {
 
   return (
       <div className={'background'}>
+          <FormProvider>
           <QuoteModal/>
+          </FormProvider>
          <div className={'h-screen overflow-scroll w-full flex flex-col items-center'}>
                  <a className={'w-full flex justify-center bg-[#171717]'} href={'http://www.djreuven.com'}><img width={110} height={100} src={logo}/></a>
                  <div className={'w-full p-5 text-center  text-white text-4xl font-medium'}>
