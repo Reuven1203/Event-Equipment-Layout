@@ -8,12 +8,8 @@ interface item {
     quantity: number;
 }
 
-const PackageSelector:FC<{index:number,title:string, items?:item[], basePrice:number, onClick:(arg:number)=> void,isSelected:boolean}> = (props) => {
+const PackageSelector:FC<{index:number,title:string, items?:item[], price:number, onClick:(arg:number)=> void,isSelected:boolean}> = (props) => {
     const {onPackageSelect,openModalHandler, selectedPackage} = usePackage();
-    const equipmentPrice = props.items?.reduce((acc, item) => {
-        return acc + item.price * item.quantity;
-    }
-    , 0);
     const onClickHandler = () => {
         if(props.index == selectedPackage) {
             openModalHandler(true);
@@ -29,7 +25,7 @@ const PackageSelector:FC<{index:number,title:string, items?:item[], basePrice:nu
             <h2 className={'w-full text-center p-2'}>{props.title}</h2>
             <div>
                 <h3 className={'w-full text-center'}>Estimated Price:</h3>
-                <h3 className={'w-full text-center text-xl font-bold'}> ${equipmentPrice && equipmentPrice + props.basePrice}</h3>
+                <h3 className={'w-full text-center text-xl font-bold'}> ${props.price}</h3>
             </div>
             <ul className="text-[13px] overflow-y-scroll text-center max-h-[40%]">
                 {props.items?.map((item) => {

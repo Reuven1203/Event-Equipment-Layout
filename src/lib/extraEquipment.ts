@@ -2,9 +2,14 @@ import {equipment}from './Models/equipmentModel';
 
 export const extraEquipment: equipment[] = [
     {
-        id: 1,
+        id: 0,
         name: 'microphone',
         price: 30,
+    },
+    {
+        id: 1,
+        name: 'Dice Floor LED',
+        price: 10,
     },
     {
         id: 2,
@@ -13,11 +18,6 @@ export const extraEquipment: equipment[] = [
     },
     {
         id: 3,
-        name: 'Dice Floor LED',
-        price: 10,
-    },
-    {
-        id: 4,
         name: 'Gig Bar',
         price: 30,
     }

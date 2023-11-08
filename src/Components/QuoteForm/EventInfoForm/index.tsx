@@ -4,6 +4,7 @@ import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs';
 import {DateTimePicker} from '@mui/x-date-pickers/DateTimePicker';
 import {FormControl, InputLabel, MenuItem, Select, Slider, TextField} from '@mui/material';
 import {useForm} from '../../../Contexts/FormContext';
+import {eventTypes} from '../../../lib/eventTypes';
 
 const EventInfoForm = () => {
     const {formik} = useForm()
@@ -27,13 +28,11 @@ const EventInfoForm = () => {
                     value={formik.values.type}
                     onChange={formik.handleChange}
                 >
-                    <MenuItem value={1}>Wedding</MenuItem>
-                    <MenuItem value={2}>Birthday</MenuItem>
-                    <MenuItem value={3}>Engagement/Henna party</MenuItem>
-                    <MenuItem value={3}>Bar/Bat Mitzvah</MenuItem>
-                    <MenuItem value={4}>Corporate event</MenuItem>
-                    <MenuItem value={5}>House party</MenuItem>
-                    <MenuItem value={6}>Other</MenuItem>
+                    {eventTypes.map((type) => {
+                        return (
+                            <MenuItem key={type.id} value={type.id}>{type.name}</MenuItem>
+                        )
+                    })}
                 </Select>
                 {formik.errors.type && <p className={'text-red-500'}>{formik.errors.type}</p>}
             </FormControl>

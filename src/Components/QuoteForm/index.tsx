@@ -4,13 +4,14 @@ import {
     StepLabel, Stepper,
     TextField,
 } from '@mui/material';
-import {Person, Event, SpeakerGroup} from '@mui/icons-material';
+import {Person, Event, SpeakerGroup, Receipt} from '@mui/icons-material';
 import {useState} from 'react';
 import {usePackage} from '../../Contexts/PackageContext';
 import {useForm} from '../../Contexts/FormContext';
 import PersonalInfoForm from './PersonalInfoForm';
 import EventInfoForm from './EventInfoForm';
 import EquipmentInfoForm from './EquipmentInfoForm';
+import FormSummary from './FormSummary';
 
 
 const QuoteForm = () => {
@@ -34,10 +35,16 @@ const QuoteForm = () => {
         {
             index: 2,
             icon: SpeakerGroup,
-            error: ''
+        },
+        {
+            index: 3,
+            icon: Receipt,
         }
     ]
     const handleNext = () => {
+           if(activeStep == formSteps.length - 1) {
+                return
+            }
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
     }
 
@@ -48,13 +55,24 @@ const QuoteForm = () => {
             openModalHandler(false);
         }
     }
+
+    const handleStepClick = (index: number) => {
+        if (index == formSteps.length - 1) {
+            if(Object.keys(formik.errors).length > 0) {
+                return
+            }
+        }
+            setActiveStep(index);
+
+
+    }
     return (
         <div className={'w-full h-full'}>
                 <h1 className={'text-center text-2xl font-bold'}>Get a quote</h1>
                 <h2 className={'text-center'}>Fill out the following information</h2>
             <Stepper activeStep={activeStep} alternativeLabel sx={{marginTop:3}}>
                 {formSteps.map((step) => (
-                    <Step  key={step.index} active={activeStep === step.index} onClick={()=> setActiveStep(step.index)}>
+                    <Step  key={step.index} active={activeStep === step.index} onClick={() => handleStepClick(step.index)}>
                         <StepLabel sx={{'&:hover':{cursor :'pointer'}, color:'grey','.Mui-completed':{ color:'green'}, '.Mui-active':{color:'black', size:'large'}, '.Mui-error':{color:'red'}}} StepIconComponent={step.icon} error={activeStep > step.index && step.error != undefined}></StepLabel>
                     </Step>
                 ))}
@@ -69,12 +87,16 @@ const QuoteForm = () => {
                 {activeStep == 2 &&
                    <EquipmentInfoForm/>
                 }
+                {
+                    activeStep == 3 &&
+                    <FormSummary/>
+                }
                 </div>
             <div className={'flex w-full space-x-3 absolute bottom-0 left-0 p-3'}>
                 <Button variant={'outlined'} className={'w-full'} onClick={handleBack}>Back</Button>
                 <div className={'w-full'}>
                     {activeStep == 2 && Object.keys(formik.errors).length !=0 && <p className={'text-red-500 absolute bottom-12'}>Complete steps before proceeding</p>}
-                    <Button disabled={activeStep == 2 && Object.keys(formik.errors).length !=0} variant={'contained'} className={'w-full'} onClick={handleNext}>Next</Button>
+                    <Button disabled={activeStep == 2 && Object.keys(formik.errors).length !=0} variant={'contained'} className={'w-full'} onClick={handleNext}>{activeStep == formSteps.length-1 ? 'Complete' : 'Next'}</Button>
                 </div>
             </div>
         </div>

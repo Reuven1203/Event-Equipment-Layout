@@ -5,7 +5,6 @@ import {useForm} from '../../../Contexts/FormContext';
 import {usePackage} from '../../../Contexts/PackageContext';
 
 const EquipmentInfoForm = () => {
-    const {formik} = useForm();
     const {onPackageSelect, selectedPackage} = usePackage();
     return (
         <div className={'flex flex-col space-y-[30px] mt-7'}>
@@ -21,7 +20,7 @@ const EquipmentInfoForm = () => {
                     <MenuItem value={2}>Deluxe</MenuItem>
                 </Select>
             </FormControl>
-            <h1>Extra Equipment</h1>
+            <h2>Extra Equipment</h2>
             <ExtraEquipmentGrid />
             <TextField sx={{width:'100%'}}  label={'Additional information'} variant='standard'/>
         </div>

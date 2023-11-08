@@ -31,7 +31,7 @@ const QuoteModal = () => {
         <>
             {screenWidth > 450 ? <div>
                 <Modal open={isModalOpen} onClose={onCloseHandler}>
-                    <div className={'p-4 space-y-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white min-w-[700px] min-h-[700px]'}>
+                    <div className={'p-4 space-y-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white min-w-[700px] min-h-[700px] max-h-[700px]'}>
                         <QuoteForm/>
                     </div>
                 </Modal>
