@@ -26,8 +26,8 @@ const Card:FC<Props> = ({children, isSelected,onClick, isCustomize}) => {
 
     return (
         <div onClick={onClick}  className={`${toggleAnimation()} 
-         rounded-2xl  bg-[#181819] border-white border-2 text-white  shadow-2xl 
-        sm:cursor-pointer h-[245px] max-sm:w-[80%] w-[230px] relative 
+         rounded-2xl  bg-[#181819] border-white border-2 text-white  shadow-2xl
+        sm:cursor-pointer h-[245px] max-sm:w-[80%] w-[230px] relative hover:animate-pulse
        
         `}>
             {children}

@@ -4,23 +4,7 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-      colors: {
-        blue: {
-            light: '#3B82F6',
-        },
-          white: {
-                DEFAULT: '#FFFFFF',
-          },
-          black: {
-                DEFAULT: '#000000',
-          }
-      },
     extend: {
-        boxShadow: {
-            'custom-1': '0px 0px 9.15px 0px #2E4AA6',
-            'custom-2': '0px 0px 18.3px 0px #2E4AA6',
-            'custom-3': '0px 0px 64.05px 0px #2E4AA6',
-        },
       keyframes: {
         expand: {
            '0%' : {height: '245px'},
@@ -30,6 +14,9 @@ module.exports = {
               '0%' : {height: '275px'},
                 '100%' : {height: '240px'},
         },
+          pulse: {
+            
+          }
         // showForm: {
         //     '0%' : {
         //         height: '10px',

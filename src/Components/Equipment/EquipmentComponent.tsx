@@ -1,10 +1,4 @@
 import React, {JSX, ReactNode} from 'react';
-import {ReactComponent as Speaker} from './SVG Files/Speaker + stand.svg';
-import {ReactComponent as Booth} from './SVG Files/Booth.svg';
-import {ReactComponent as SpeakerWithBass} from './SVG Files/Speaker + bass.svg';
-import {ReactComponent as MovingHead} from './SVG Files/Moving head.svg';
-import {ReactComponent as Gigbar} from './SVG Files/Gigbar with stand.svg';
-import {ReactComponent as BoothWithLights} from './SVG Files/BoothWithLights.svg';
 import Speakerpng from './PNG files/speaker.png';
 import Boothpng from './PNG files/Booth.png';
 import SpeakerWithBasspng from './PNG files/Speaker + bass.png';
@@ -82,10 +76,8 @@ const EquipmentComponent:FC<{component: allowedStrings, width?: number, height?:
                 case "MovingHead":
                     // return <MovingHead width={width} height={height} style={{height: '90%'}} />;
                     return <div className={'w-[50px] max-sm:w-[20px]'}>
-                        <img src={MovingHeadpng} alt='Speaker'/>;
+                        <img src={MovingHeadpng} alt='Speaker'/>
                     </div>
-                case "Gigbar":
-                    return <Gigbar width={width} height={height} style={{height: '90%'}} />;
                 case "Speaker":
                     return <div className={'w-[65px] max-sm:w-[35px]'}>
                         <img src={Speakerpng} alt='Speaker'/>
@@ -95,11 +87,6 @@ const EquipmentComponent:FC<{component: allowedStrings, width?: number, height?:
                     return <div className={'flex flex-col justify-end'}>
                         <img src={Boothpng} width={230}   alt='Booth' />
                     </div>;
-
-
-
-                default:
-                    return <Booth width={width} height={height} />;
             }
         }
 

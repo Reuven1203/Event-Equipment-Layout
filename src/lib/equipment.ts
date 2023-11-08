@@ -6,43 +6,31 @@ const speaker: equipment = {
     price: 35
 }
 
-const microphone: equipment = {
-    id: 2,
-    name: 'Microphone',
-    price: 30
-}
 const booth: equipment = {
-    id: 3,
+    id: 2,
     name: 'Booth',
     price: 55
 }
 
 const movingHead: equipment = {
-    id: 4,
+    id: 3,
     name: 'Moving Head',
     price: 80
 
 }
 
 const bass: equipment = {
-    id: 5,
+    id: 4,
     name: 'Bass',
     price: 60
 
 }
 
-const floorLights: equipment = {
-    id: 6,
-    name: 'Floor Lights',
-    price: 10
-}
 
 export const equipmentList = {
     speaker,
-    microphone,
     booth,
     movingHead,
     bass,
-    floorLights
 }
 
