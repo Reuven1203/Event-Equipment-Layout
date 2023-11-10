@@ -9,7 +9,7 @@ import {
     TableContainer,
     TableFooter,
     TableHead,
-    TableRow
+    TableRow, Typography
 } from '@mui/material';
 import {useForm} from '../../../Contexts/FormContext';
 import {usePackage} from '../../../Contexts/PackageContext';
@@ -17,12 +17,14 @@ import {packs} from '../../../lib/packages';
 import {extraEquipment} from '../../../lib/extraEquipment';
 import {eventTypes} from '../../../lib/eventTypes';
 import SummarySection from './SummarySection';
+import {useTheme} from '@mui/material';
 
 
 
 const FormSummary = () => {
     const {formik} = useForm();
     const {selectedPackage} = usePackage();
+    const {palette} = useTheme();
     const values = formik.values;
     const mapSelectedPackageToPack = (selectedPackage:number) => {
         switch(selectedPackage) {
@@ -101,7 +103,7 @@ const FormSummary = () => {
         }]
     return (
         <Paper className={'p-4 mt-3 max-h-[475px] max-sm:max-h-[525px] overflow-y-scroll overflow-y-visible'} elevation={2}>
-            <h1 className={'w-full text-center'}>Summary</h1>
+            <Typography sx={{color:palette.text.primary}} variant={'h2'} className={'w-full text-center'}>Summary</Typography>
             <div className={'space-y-4 w-full mt-4'}>
                     <SummarySection values={personalInfo} sectionName={'Personal Info'}/>
                     <SummarySection values={eventInfo} sectionName={'Event Info'}/>
@@ -173,12 +175,12 @@ const FormSummary = () => {
                         <Table>
                             <TableFooter>
                                 <TableRow>
-                                    <TableCell align={'left'}><h3 className={'text-md'}>Extra Equipment Cost</h3> </TableCell>
-                                    <TableCell align={'right'} sx={{fontWeight:'bold'}}><h3 className={'font-bold'}>${totalExtraEquipmentCost()}</h3></TableCell>
+                                    <TableCell align={'left'}><Typography variant={'h6'} sx={{color:palette.text.primary}}>Extra Equipment Cost</Typography> </TableCell>
+                                    <TableCell align={'right'} sx={{fontWeight:'bold'}}><Typography  variant={'h6'} className={'font-bold'}>${totalExtraEquipmentCost()}</Typography></TableCell>
                                 </TableRow>
                                 <TableRow>
-                                    <TableCell align={'left'}><h3 className={'text-xl underline-offset-4 underline'}>Estimated Total Cost</h3></TableCell>
-                                    <TableCell align={'right'}><h3 className={'font-bold text-xl'}>${totalExtraEquipmentCost() + mapSelectedPackageToPack(selectedPackage).price}</h3></TableCell>
+                                    <TableCell align={'left'}><Typography sx={{color:palette.text.primary}} variant={'h5'} className={'text-xl underline-offset-4 underline'}>Estimated Total Cost</Typography></TableCell>
+                                    <TableCell align={'right'}><Typography sx={{color:palette.text.primary}} variant={'h5'} className={'font-bold text-xl'}>${totalExtraEquipmentCost() + mapSelectedPackageToPack(selectedPackage).price}</Typography></TableCell>
                                 </TableRow>
                             </TableFooter>
                         </Table>

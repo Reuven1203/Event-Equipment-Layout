@@ -1,7 +1,7 @@
 import {FC, useEffect,useReducer} from 'react';
 import {FormControlLabel,Checkbox, Rating} from '@mui/material';
 import {Speaker,SpeakerGroup, Light, Fluorescent} from '@mui/icons-material';
-import Card from '../PackageSelector/Card';
+import PackageSelectorCard from '../PackageSelector/PackageSelectorCard';
 
 interface EquipmentState {
     checked: boolean;

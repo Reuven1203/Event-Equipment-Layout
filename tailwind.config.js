@@ -1,4 +1,8 @@
 /** @type {import('tailwindcss').Config} */
+const packageSelectorCard = {
+    unexpandedCardHeight: '210px',
+    expandedCardHeight: '280px',
+}
 module.exports = {
   content: [
       "./index.html",
@@ -8,12 +12,12 @@ module.exports = {
     extend: {
       keyframes: {
         expand: {
-           '0%' : {height: '245px'},
-              '100%' : {height: '275px'},
+               '0%' : {height: packageSelectorCard.unexpandedCardHeight},
+              '100%' : {height: packageSelectorCard.expandedCardHeight},
         },
         shrink: {
-              '0%' : {height: '275px'},
-                '100%' : {height: '240px'},
+              '0%' : {height: packageSelectorCard.expandedCardHeight},
+                '100%' : {height: packageSelectorCard.unexpandedCardHeight},
         },
           pulse: {
             

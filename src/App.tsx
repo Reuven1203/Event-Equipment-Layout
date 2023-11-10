@@ -1,5 +1,3 @@
-import {useState} from 'react';
-import './App.css';
 import EquipmentComponent from './Components/Equipment/EquipmentComponent';
 import QuoteModal from './Components/QuoteModal';
 import PackageList from './Components/PackageList';
@@ -7,11 +5,28 @@ import {usePackage} from './Contexts/PackageContext';
 import {FormProvider} from './Contexts/FormContext';
 //import favicon
 import logo from './DJLOGO.png'
+import {Box, Divider, Icon, Link, Paper, Typography} from '@mui/material';
+import {GitHub,LinkedIn} from '@mui/icons-material';
+import {useTheme} from '@mui/material';
+
 
 
 
 function App() {
     const {onPackageSelect, selectedPackage} = usePackage();
+    const {palette} = useTheme();
+    const footerLinks = [
+        {
+            name: 'Github',
+            icon: <GitHub />,
+            url: 'https://github.com/Reuven1203',
+        },
+        {
+            name: 'LinkedIn',
+            icon: <LinkedIn />,
+            url: 'https://www.linkedin.com/in/reuven-ostrofsky/',
+        },
+    ]
     const equipmentRender = () => {
         if(selectedPackage === 0) {
             return (
@@ -47,25 +62,36 @@ function App() {
     }
 
   return (
-      <div className={'background'}>
+      <Box
+          sx={{background: `linear-gradient(180deg, ${palette.primary.main} 0%, ${palette.primary.light} 100%)`, overflow:'hidden'}}
+          className={'flex justify-center align-middle items-center'}
+      >
           <FormProvider>
           <QuoteModal/>
           </FormProvider>
-         <div className={'h-screen overflow-scroll w-full flex flex-col items-center'}>
-                 <a className={'w-full flex justify-center bg-[#171717]'} href={'http://www.djreuven.com'}><img width={110} height={100} src={logo}/></a>
-                 <div className={'w-full p-5 text-center  text-white text-4xl font-medium'}>
-                     BASSMENT EVENTS
-                 </div>
-              <div className="h-[25%] max-sm:min-h-[30%] max=lg:rounded-2xl w-fit max-lg:w-full p-5 items-center p-5  shadow-md shadow-white flex sm:space-x-auto justify-center bg-[#F4FDFF]">
+          <Box className={'h-screen overflow-scroll w-full flex flex-col items-center'}>
+                 <Typography variant={'h1'} className={'w-full p-5 text-center'}>
+                     INDUSTRY NAME HERE
+                 </Typography>
+              <Box className="h-[25%] max-sm:min-h-[30%] max=lg:rounded-2xl w-fit max-lg:w-full p-5 items-center p-5  shadow-sm shadow-black flex sm:space-x-auto justify-center">
                       {equipmentRender()}
-              </div>
-              <div className={'mt-6 h-full w-full'}>
-                  <h1 className={'text-white w-full text-center font-bold text-3xl max-sm:p-3'}>Select a package</h1>
+              </Box>
+              <Box className={'mt-6 h-full w-full'}>
+                  <Typography variant={'h3'}   className={'w-full text-center max-sm:p-3'}>Select a package</Typography>
                       <PackageList onPackageSelect={onPackageSelect}/>
-              </div>
-          </div>
-
-      </div>
+              </Box>
+             <Box component={'footer'} className={' w-full text-center p-3 flex text-white justify-center space-x-3'}>
+                 <Typography sx={{color:palette.primary.dark}} variant={'subtitle1'}>Created By Reuven Ostrofsky</Typography>
+                 <Box className={'space-x-3'}>
+                     {footerLinks.map((link) => {
+                         return (
+                             <Link  href={link.url} target={'_blank'}>{link.icon}</Link>
+                         )
+                     })}
+                 </Box>
+             </Box>
+          </Box>
+      </Box>
 
   );
 }
