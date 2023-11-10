@@ -1,7 +1,6 @@
 import {useFormik} from 'formik';
 import {createContext, useContext, useEffect} from 'react';
 import {usePackage} from './PackageContext';
-import {extraEquipment} from '../lib/extraEquipment';
 
 interface FormContextData {
     formik: any;

@@ -1,9 +1,11 @@
 import React from 'react';
-import {TextField} from '@mui/material';
+import {Box, TextField, Typography} from '@mui/material';
 import {useForm} from '../../../Contexts/FormContext';
+import {useTheme} from '@mui/material';
 
 const PersonalInfoForm = () => {
     const {formik} = useForm();
+    const {palette} = useTheme();
     const firstStepFields = [
         {
             name: 'name',
@@ -31,16 +33,16 @@ const PersonalInfoForm = () => {
         }
     ]
     return (
-        <div className={'w-full flex flex-col space-y-[20px] mt-6'}>
+        <Box className={'w-full flex flex-col space-y-[20px] mt-6'}>
             {firstStepFields.map((field) => {
                 return (
                     <>
                         <TextField key={field.name} sx={{width:'100%'}} name={field.name} error={field.error != undefined}  label={field.label} variant='standard' onChange={formik.handleChange} value={field.value}/>
-                        {field.error && <p className={'text-red-500'}>{field.error}</p>}
+                        {field.error && <Typography sx={{color:palette.error.main}}>{field.error}</Typography>}
                     </>
                 )
             })}
-        </div>
+        </Box>
     );
 };
 

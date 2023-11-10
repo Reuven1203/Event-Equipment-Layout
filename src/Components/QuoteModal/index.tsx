@@ -1,5 +1,5 @@
 import React from 'react';
-import {Modal, SwipeableDrawer} from '@mui/material';
+import {Box, Container, Modal, Paper, SwipeableDrawer, useTheme} from '@mui/material';
 import {usePackage} from '../../Contexts/PackageContext';
 import {ExpandMore} from '@mui/icons-material';
 import QuoteForm from '../QuoteForm';
@@ -10,6 +10,7 @@ const QuoteModal = () => {
     const onCloseHandler = () => {
         openModalHandler(false);
     }
+    const {palette} = useTheme();
 
 
     const toggleDrawer = (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -29,18 +30,18 @@ const QuoteModal = () => {
 
     return (
         <>
-            {screenWidth > 450 ? <div>
+            {screenWidth > 450 ?
                 <Modal open={isModalOpen} onClose={onCloseHandler}>
-                    <div className={'p-4 space-y-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white min-w-[700px] min-h-[700px] max-h-[700px]'}>
+                    <Paper className={'p-4 space-y-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[800px] w-[800px] min-h-[700px] max-h-[700px]'}>
                         <QuoteForm/>
-                    </div>
+                    </Paper>
                 </Modal>
-            </div> :
+            :
                     <SwipeableDrawer className={'h-screen'} anchor={'bottom'} open={isModalOpen} onOpen={toggleDrawer(true)} onClose={toggleDrawer(false)}>
-                        <div className={'h-[90vh] overflow-hidden'}>
-                            <ExpandMore onClick={toggleDrawer(false)} fontSize={'large'} sx={{color:'black', width:'100%'}}/>
+                        <Container className={'h-[90vh] overflow-hidden'}>
+                            <ExpandMore onClick={toggleDrawer(false)} fontSize={'large'} sx={{color:palette.primary.dark, width:'100%'}}/>
                             <QuoteForm/>
-                        </div>
+                        </Container>
                     </SwipeableDrawer>
             }
 

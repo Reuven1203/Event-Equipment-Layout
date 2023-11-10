@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 html{
-    font-family: 'Questrial', sans-serif;
+    font-family: Questrial, sans-serif;
 }
 
 h1{

@@ -1,11 +1,13 @@
 import React, {FC} from 'react';
 import {Box, TextField, Divider} from '@mui/material';
+import {useTheme} from '@mui/material';
 
 interface values {
     title: string;
     value: string;
 }
 const SummarySection:FC<{values: values[],sectionName:string}> = (props) => {
+    const {palette} = useTheme();
     return (
         <Box className={'flex flex-col space-y-5'}>
             <Divider className={'text-center font-bold text-2xl'}>{props.sectionName}</Divider>
@@ -15,9 +17,9 @@ const SummarySection:FC<{values: values[],sectionName:string}> = (props) => {
                             readOnly: true,
                         }} label={value.title} variant={'standard'} value={value.value} disabled  sx={{
                             "& .MuiInputBase-input.Mui-disabled": {
-                                WebkitTextFillColor: "#000000",
+                                WebkitTextFillColor: palette.text.primary,
                             }, '.Mui-disabled':{
-                                color:'black'
+                                color: palette.text.primary
                             }
                         }} />
                     )
