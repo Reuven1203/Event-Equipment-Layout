@@ -55,7 +55,7 @@ const ExtraEquipmentCard:FC<{reference:number, name: string, img: any, max: numb
                         <Typography variant={'h5'} color={'primary'} className={'flex items-center'}>{quantity}</Typography>
                         <IconButton  onClick={handleQuantityChange(true)} sx={{color:palette.primary.main}}><AddCircleOutline fontSize={'large'}/></IconButton>
                     </Box>}
-                    <Typography variant={'h6'} sx={{color:palette.text.primary}} className={'font-bold w-full text-center'}>{props.name}</Typography>
+                    <Typography variant={'h6'} sx={{color:palette.primary.main}} className={'font-bold w-full text-center'}>{props.name}</Typography>
                 </Box>
             </Card>
     );
