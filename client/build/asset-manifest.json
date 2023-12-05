@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.74e855d8.css",
+    "main.js": "/static/js/main.93ddf3d7.js",
+    "static/js/787.23eed11b.chunk.js": "/static/js/787.23eed11b.chunk.js",
+    "static/media/FogMachine.png": "/static/media/FogMachine.05e945f277c67fe35616.png",
+    "static/media/microphone.png": "/static/media/microphone.81e56727f548a5032bdf.png",
+    "static/media/Gigbar.png": "/static/media/Gigbar.85f3099ff3d7d852a632.png",
+    "static/media/FloorLED.png": "/static/media/FloorLED.123e9c03d2be59d4220d.png",
+    "static/media/Speaker + bass.png": "/static/media/Speaker + bass.56f1522598b32a1009bd.png",
+    "static/media/speaker.png": "/static/media/speaker.cd259f5514f7266f174f.png",
+    "static/media/MovingHead.png": "/static/media/MovingHead.09e87721a330185c7588.png",
+    "static/media/DJLOGO.png": "/static/media/DJLOGO.2e9769f6fac240e4da06.png",
+    "static/media/Booth.png": "/static/media/Booth.6ffff066eab55671bbe8.png",
+    "static/media/Booth.svg": "/static/media/Booth.a5d8235736156644952c3e66a69da6b7.svg",
+    "static/media/Gigbar with stand.svg": "/static/media/Gigbar with stand.daa5cfba6584e066bb7ae3914544d769.svg",
+    "index.html": "/index.html",
+    "main.74e855d8.css.map": "/static/css/main.74e855d8.css.map",
+    "main.93ddf3d7.js.map": "/static/js/main.93ddf3d7.js.map",
+    "787.23eed11b.chunk.js.map": "/static/js/787.23eed11b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.74e855d8.css",
+    "static/js/main.93ddf3d7.js"
+  ]
+}
