@@ -71,7 +71,8 @@ function App() {
           </FormProvider>
           <Box className={'h-screen overflow-scroll w-full flex flex-col items-center'}>
                  <Typography variant={'h1'} className={'w-full p-5 text-center'}>
-                     INDUSTRY NAME HERE
+                     {/*INDUSTRY NAME HERE*/}
+                     DJ REUVEN EVENTS
                  </Typography>
               <Box className="h-[25%] max-sm:min-h-[30%] max=lg:rounded-2xl w-fit max-lg:w-full p-5 items-center p-5  shadow-sm shadow-black flex sm:space-x-auto justify-center">
                       {equipmentRender()}

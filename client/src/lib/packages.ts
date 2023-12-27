@@ -9,9 +9,9 @@ const totalPackagePrice = (pack : any) => {
     }, 0)
 }
 
-const basicPackBasePrice = 500;
-const standardPackBasePrice = 600;
-const deluxePackBasePrice = 800;
+const basicPackBasePrice = 525;
+const standardPackBasePrice = 675;
+const deluxePackBasePrice = 1725;
 
 
 const basicPack = [
