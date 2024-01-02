@@ -1,7 +1,8 @@
 import { Request, Response } from 'express';
 import Equipment from './../models/equipmentModel';
 import path from 'path';
-import fs from 'fs'; // Adjust the path to your Equipment model
+import fs from 'fs';
+import User from '../models/userModel'; // Adjust the path to your Equipment model
 
 const equipmentController = {
     // Create new equipment
@@ -15,6 +16,12 @@ const equipmentController = {
             }
             if (!req.file) {
                 return res.status(400).json({ message: 'Missing file' });
+            }
+
+            //check if existing equipment has same name
+            const checkEquipment = await Equipment.findOne({ name });
+            if (checkEquipment) {
+                return res.status(400).json({ message: 'Equipment already exists with this name' });
             }
 
             const newEquipment = new Equipment({
@@ -37,7 +44,15 @@ const equipmentController = {
     // Get all equipment
     async getAllEquipment(req: Request, res: Response) {
         try {
-            const equipments = await Equipment.find();
+            if(!req.params.uid){
+                return res.status(400).json({ message: 'Missing user id' });
+            }
+            //find if user exists
+            const checkUser = await User.findById(req.params.uid);
+            if (!checkUser) {
+                return res.status(400).json({ message: 'User does not exist' });
+            }
+            const equipments = await Equipment.find().where('uid').equals(req.params.uid);
             res.status(200).json(equipments);
         } catch (error:any) {
             res.status(500).json({ message: error.message });
