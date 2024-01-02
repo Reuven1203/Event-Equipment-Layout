@@ -1,0 +1,70 @@
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 01:57:07 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 01:57:08 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 01:57:21 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 01:57:22 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 01:58:03 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 01:58:04 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 01:59:17 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 01:59:17 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 02:01:14 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 02:01:19 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 02:12:58 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 02:12:59 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 02:15:04 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 02:15:05 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 02:15:57 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 02:15:58 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 02:19:22 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 02:19:23 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 02:22:36 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 02:22:36 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 02:22:54 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 02:22:55 T-05:00"}
+{"level":"error","message":"/Users/reuvenostrofsky/Downloads/DJ APP/server/public/equipment/user-undefined-1704180180734.png: unable to open for write\nunix error: No such file or directory","timestamp":"2024-01-02 02:23:00 T-05:00"}
+{"level":"error","message":"/Users/reuvenostrofsky/Downloads/DJ APP/server/public/equipment/user-undefined-1704180194164.png: unable to open for write\nunix error: No such file or directory","timestamp":"2024-01-02 02:23:14 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 02:23:44 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 02:23:45 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 02:25:37 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 02:25:38 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 02:26:42 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 02:26:43 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 02:31:34 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 02:31:35 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 02:33:34 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 02:33:35 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 02:36:16 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 02:36:17 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 02:37:39 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 02:37:40 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 02:38:02 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 02:38:03 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 02:43:47 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 02:43:48 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 02:48:37 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 02:48:38 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 02:49:25 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 02:49:26 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 02:50:35 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 02:50:36 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 02:52:01 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 02:52:02 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 02:53:46 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 02:53:48 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 02:54:09 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 02:54:10 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 02:54:44 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 02:54:45 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 02:55:51 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 02:55:52 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 02:57:01 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 02:57:02 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 03:00:03 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 03:00:04 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 03:00:36 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 03:00:37 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 03:00:48 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 03:00:49 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 03:02:16 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 03:02:16 T-05:00"}
+{"level":"info","message":"App listening on port 4000","timestamp":"2024-01-02 03:02:56 T-05:00"}
+{"level":"info","message":"Server-DB Connection Successful!","timestamp":"2024-01-02 03:02:57 T-05:00"}
