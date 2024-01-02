@@ -9,7 +9,7 @@ const equipmentController = {
     async createEquipment(req: Request, res: Response) {
         try {
             const { uid } = req.params;
-            const { name, description, price } = req.body;
+            const { name, description, price, isExtra } = req.body;
 
             if (!uid) {
                 return res.status(400).json({ message: 'Missing user id' });
@@ -30,7 +30,7 @@ const equipmentController = {
                 description,
                 price,
                 picture: req.file.filename, // Reference to the saved file
-                isExtra: true,
+                isExtra,
             });
 
             const savedEquipment = await newEquipment.save();

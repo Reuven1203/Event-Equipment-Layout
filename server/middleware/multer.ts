@@ -28,12 +28,11 @@ export const resizeImage = async (req : Request, res:Response, next: NextFunctio
     if (!req.file) {
         return next();
     }
-    if(!req.params.uid){
-        return res.status(400).json({ message: 'Missing user id' });
+    if(!req.params.uid) {
+        return res.status(400).json({message: 'Missing user id'});
     }
-
-    const filename = `user-${req.params.uid}-${Date.now()}.png`;
-    const directory = path.join(__dirname, './../public/equipmentUploads'); // Adjusted path
+    const filename = `${req.body.name.trim()}-ts-${Date.now()}.png`;
+    const directory = path.join(__dirname, `./../public/equipmentUploads/User-${req.params.uid}`); // Adjusted path
     const filePath = path.join(directory, filename)
 
     try {
@@ -44,7 +43,6 @@ export const resizeImage = async (req : Request, res:Response, next: NextFunctio
 
         // Process and save the file
         await sharp(req.file.buffer)
-            .resize(500, 500)
             .toFormat('png')
             .png({ quality: 90 })
             .toFile(filePath);
